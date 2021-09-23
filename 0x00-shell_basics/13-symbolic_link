@@ -1,0 +1,2 @@
+#!/bin/bash
+ln -s --sybolic __ls__ .
