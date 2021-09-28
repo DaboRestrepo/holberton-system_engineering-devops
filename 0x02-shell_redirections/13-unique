@@ -1,2 +1,2 @@
 #!/bin/bash
-sort números | uniq -d
+sort < list.txt | uniq -d | head
