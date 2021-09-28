@@ -1,2 +1,2 @@
 #!/bin/bash
-cat /etc/ssh/sshd_config | tr -s '#'
+cat /etc/ssh/sshd_config | tr -d '# '
