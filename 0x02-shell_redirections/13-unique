@@ -1,2 +1,2 @@
 #!/bin/bash
-sort < list_file.txt | uniq -u
+sort | uniq -u | tr ' ' '\n'
