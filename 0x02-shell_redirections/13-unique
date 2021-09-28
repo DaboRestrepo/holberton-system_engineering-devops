@@ -1,2 +1,2 @@
 #!/bin/bash
-sort < list.txt | uniq -d | head
+cat list_file | sort | uniq -d
