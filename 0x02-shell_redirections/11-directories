@@ -1,3 +1,2 @@
 #!/bin/bash
-find . -type d -exec ls -lad {} +
-
+find . -maxdepth 1 -type d -exec ls -lad {} +
