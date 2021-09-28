@@ -1,2 +1,2 @@
 #!/bin/bash
-cat list_file | sort | uniq -d
+cat <list_file> | sort | uniq -d
