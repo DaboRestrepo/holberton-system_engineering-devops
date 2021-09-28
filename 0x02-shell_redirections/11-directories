@@ -1,2 +1,3 @@
 #!/bin/bash
-ls -la | wc -l
+find . -maxdepth 1 -type d -exec ls -lRa {} + | wc -l
+
