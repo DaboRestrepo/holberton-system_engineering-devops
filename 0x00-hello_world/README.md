@@ -1,1 +1,0 @@
-Proyecto C básico
