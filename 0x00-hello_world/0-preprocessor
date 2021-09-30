@@ -1,0 +1,2 @@
+#!/bin/bash
+bcc $CFILE -o c
