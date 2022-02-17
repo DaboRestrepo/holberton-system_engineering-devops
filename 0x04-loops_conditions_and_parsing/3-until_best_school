@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script print Best school 10 times with until.
+x=1
+until [ "$x" -eq 11 ]; do echo "Best School"; x=$(( x + 1 )); done
