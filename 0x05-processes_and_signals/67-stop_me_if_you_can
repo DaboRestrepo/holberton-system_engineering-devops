@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# -f The pattern is normally only matched against the process name.
+pkill -f 7-highlander
