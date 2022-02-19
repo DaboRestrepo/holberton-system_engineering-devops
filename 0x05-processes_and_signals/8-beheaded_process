@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# -f The pattern is normally only matched against the process name.
+kill -kill "$(pgrep -f 7-highlander)"
