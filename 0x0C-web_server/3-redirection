@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Redirect a webpage.
-apt-get update
+apt-get -y upgrade
+apt-get -y update
 apt-get -y install nginx
 ufw allow 'nginx HTTP'
 echo 'Hello World' > /var/www/html/index.html
