@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Solve some issues to retrieve a page
+sudo apt update
+sudo apt install apache2 -y
+sudo service apache2 start
