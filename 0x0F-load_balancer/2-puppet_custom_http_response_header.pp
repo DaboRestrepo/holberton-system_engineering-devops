@@ -5,16 +5,16 @@ exec { 'update':
 }
 package { 'nginx':
     ensure  => installed,
-    require => exec['update'],
+    require => Exec['update'],
 }
 file_line { 'header_custom':
     ensure  => present,
     path    => '/etc/nginx/sites-enabled/default',
     after   => 'server_name _;',
     line    => 'add_header X-Served-By $(hostname);',
-    require => package['nginx'],
+    require => Package['nginx'],
 }
 service { 'nginx':
     ensure  => 'running',
-    require => file_line['header_custom'],
+    require => File_line['header_custom'],
 }
