@@ -9,7 +9,7 @@ package { 'nginx':
 }
 file { '/var/www/html/index.html':
     ensure => present,
-    content => 'Hellow World',
+    content => 'Hello World',
 }
 file_line { 'redirect':
     ensure => present,
