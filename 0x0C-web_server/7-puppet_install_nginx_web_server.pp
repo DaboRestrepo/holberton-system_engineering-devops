@@ -11,7 +11,7 @@ file { '/var/www/html/index.html':
     ensure => present,
     content => 'Hellow World',
 }
-file_line { 'redirec':
+file_line { 'redirect':
     ensure => present,
     path => '/etc/nginx/sites-available/default',
     after => 'server_name _;',
