@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Double the number of webservers.
+apt-get update
+apt-get install nginx -y
+echo 'Hello World' > /var/www/html/index.html
+sed -i "/server_name _;/a rewrite ^/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+sed -i "/server_name _;/a error_page 404 /custom_404.html;\nlocation = /custom_404.html {\n\troot /usr/share/nginx/html;\ninternal;\n}" /etc/nginx/sites-available/default
+sed -i "/server_name _;/a add_header X-Served-By $(hostname);" /etc/nginx/sites-enabled/default
+ufw allow 'Nginx HTTP'
+service nginx restart
