@@ -20,8 +20,8 @@ if __name__ == "__main__":
             totalTask += 1
             if do.get('completed'):
                 completed += 1
-    print('Employee {} is done with tasks({}/{})'.format(employee, completed,
-                                                         totalTask))
+    print('Employee {} is done with tasks({}/{}):'.format(employee, completed,
+                                                          totalTask))
     for title in todo.json():
         if title.get('userId') == int(userId):
             if title.get('completed'):
