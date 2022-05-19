@@ -25,4 +25,4 @@ if __name__ == "__main__":
     for title in todo.json():
         if title.get('userId') == int(userId):
             if title.get('completed'):
-                print('\t{} '.format(title.get('title')))
+                print('\t {}'.format(title.get('title')))
