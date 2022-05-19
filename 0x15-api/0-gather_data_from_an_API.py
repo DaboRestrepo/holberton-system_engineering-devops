@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""""""
+"""This module get data from an API"""
 import requests
 from sys import argv
 
