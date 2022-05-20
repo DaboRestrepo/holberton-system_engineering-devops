@@ -14,9 +14,9 @@ if __name__ == "__main__":
         for do in todo:
             userId = do.get('userId')
             if usr.get('id') == userId:
-                task_dict = {"task": do.get('title'),
-                             "completed": do.get('completed'),
-                             "username": usr.get('username')}
+                task_dict = {"username": usr.get('username'),
+                             "task": do.get('title'),
+                             "completed": do.get('completed')}
                 id_list.append(task_dict)
             total_usr[userId] = id_list
 
