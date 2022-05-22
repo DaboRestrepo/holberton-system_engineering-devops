@@ -15,10 +15,9 @@ def recurse(subreddit, hot_list=[], after=""):
     if r.status_code != 200:
         return None
     try:
-        r = r.json()
-        posts = r['data']['children']
-        hot_list.append(post['data']['title'] for post in posts)
-        after = r['data']['after']
+        posts = r.json()['data']['children']
+        hot_list.append(post.json()['data']['title'] for post in posts)
+        after = r.json()['data']['after']
         if after is not None:
             recurse(subreddit, hot_list, after)
         return hot_list
