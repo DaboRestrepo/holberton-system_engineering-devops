@@ -10,14 +10,14 @@ def recurse(subreddit, hot_list=[], after=""):
     url = 'https://www.reddit.com/r/' + subreddit + '/hot.json'
     params = {'after': after}
     headers = {'User-Agent': 'Dabo'}
-    if after is None:
-        return hot_list
-    r = requests.get(url, headers=headers, params=params,
-                     allow_redirects=False)
+    r = requests.get(url, headers=headers, allow_redirects=False,
+                     params=params)
     if r.status_code == 404:
         return None
     r = r.json()
     posts = r['data']['children']
     hot_list.append(post['data']['title'] for post in posts)
     after = r['data']['after']
-    return recurse(subreddit, hot_list, after)
+    if after is not None:
+        recurse(subreddit, hot_list, after)
+    return hot_list
