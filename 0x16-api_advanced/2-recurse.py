@@ -12,7 +12,7 @@ def recurse(subreddit, hot_list=[], after=""):
     headers = {'User-Agent': 'Dabo'}
     r = requests.get(url, headers=headers, allow_redirects=False,
                      params=params)
-    if r.status_code == 404:
+    if r.status_code != 200:
         return None
     try:
         r = r.json()
@@ -23,4 +23,4 @@ def recurse(subreddit, hot_list=[], after=""):
             recurse(subreddit, hot_list, after)
         return hot_list
     except Exception:
-        print(None)
+        print('None')
