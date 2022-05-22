@@ -14,10 +14,13 @@ def recurse(subreddit, hot_list=[], after=""):
                      params=params)
     if r.status_code == 404:
         return None
-    r = r.json()
-    posts = r['data']['children']
-    hot_list.append(post['data']['title'] for post in posts)
-    after = r['data']['after']
-    if after is not None:
-        recurse(subreddit, hot_list, after)
-    return hot_list
+    try:
+        r = r.json()
+        posts = r['data']['children']
+        hot_list.append(post['data']['title'] for post in posts)
+        after = r['data']['after']
+        if after is not None:
+            recurse(subreddit, hot_list, after)
+        return hot_list
+    except Exception:
+        print(None)
