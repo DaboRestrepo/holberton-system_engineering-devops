@@ -8,7 +8,7 @@ def number_of_subscribers(subreddit):
     """Function that query for the subreddit subscribers:
     subreddit: command line variable."""
     url = 'https://www.reddit.com/r/' + subreddit + '/about.json'
-    r = requests.get(url).json()
+    r = requests.get(url, headers={'User-Agent': 'Dabo'}).json()
     try:
         return r['data']['subscribers']
     except Exception:
