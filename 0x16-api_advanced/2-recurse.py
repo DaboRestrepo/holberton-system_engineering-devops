@@ -12,7 +12,8 @@ def recurse(subreddit, hot_list=[], after=""):
     headers = {'User-Agent': 'Dabo'}
     if after is None:
         return hot_list
-    r = requests.get(url, headers=headers, params=params)
+    r = requests.get(url, headers=headers, params=params,
+                     allow_redirects=False)
     if r.status_code == 404:
         return None
     r = r.json()
